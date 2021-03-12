@@ -73,12 +73,10 @@ const ProfileScreen = (props) => {
       });
     };
 
-    const navigateToTestScreen = (key) => {
-      props.navigation.navigate('Test');
+    const navigateToImageScreen = (key) => {
+      props.navigation.navigate('Image');
     };
 
-    console.log(' === props.profileImageUri === ');
-    console.log(props.profileImageUri);
     return (
         <View>
             <View style={styles.screenTitleView}>
@@ -88,7 +86,7 @@ const ProfileScreen = (props) => {
             </View>
             <View style={styles.profileImageView}>
                 <TouchableOpacity
-                    onPress={navigateToTestScreen}
+                    onPress={navigateToImageScreen}
                     style={styles.profileImageContainer}
                 >
                   <TouchableOpacity onPress={pickImage} style={[styles.editIconContainer, props.profileImageUri ? {}: {borderColor: '#006aff', borderWidth: 1}]}>
@@ -275,7 +273,6 @@ const ProfileScreen = (props) => {
         width: PROFILE_IMAGE_SIZE,
         height: PROFILE_IMAGE_SIZE,
         borderRadius: PROFILE_IMAGE_SIZE,
-        backgroundColor: 'black'
       },
   });
 

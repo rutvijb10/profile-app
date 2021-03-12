@@ -3,7 +3,7 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import InputScreen from '../../screens/InputScreen';
-import TestScreen from '../../screens/TestScreen';
+import ImageScreen from '../../screens/ImageScreen';
 import ProfileScreen from './../../screens/ProfileScreen';
 // import { 
 //   createDrawerNavigator,
@@ -118,7 +118,7 @@ const AppNavigation = () => (
     }}
     initialRouteName={'Profile'}
   >
-    <AppStack.Screen name="Test" component={TestScreen} 
+    <AppStack.Screen name="Image" component={ImageScreen} 
     options={{
       headerShown: true,
       headerLeft: (props) => {

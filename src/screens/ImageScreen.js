@@ -22,7 +22,7 @@ import {
 } from 'react-native-image-picker';
 import { useEffect } from 'react';
 
-const TestScreen = (props) => {
+const ImageScreen = (props) => {
   const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
@@ -97,7 +97,7 @@ export default compose(
       updateProfileData: (...args) => dispatch(updateProfileData(...args)),
     }),
   )
-)(TestScreen);
+)(ImageScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -164,7 +164,6 @@ screenTitleText: {
 profileImage: {
   width: 300,
   height: 300,
-  backgroundColor: 'black'
 },
 inputContainer: {
   marginTop: 20,
