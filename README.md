@@ -1,4 +1,4 @@
-# React Native Starter 🚀
+<!-- # React Native Starter 🚀
 
 [View Demo](https://play.google.com/store/apps/details?id=com.reactnativestarter.upd) | [Download](https://github.com/flatlogic/react-native-starter.git) | [More templates](https://flatlogic.com/templates) | [Support forum](https://flatlogic.com/forum)
 
@@ -86,4 +86,4 @@ For any additional information please go to our [**support forum**](https://flat
 
 ## License
 
-[Mozilla Public License 2.0](LICENSE)
+[Mozilla Public License 2.0](LICENSE) -->
