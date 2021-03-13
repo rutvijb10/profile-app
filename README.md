@@ -17,7 +17,7 @@ cd ios && pod install && cd ..
 cd android && ./gradlew clean && cd ..
 ```
 
-#### 2. Fix Images for IOS >= 14
+#### 2. Fix Images for iOS >= 14
 
 ```
 cd scripts && sh fix-image.sh && cd ..

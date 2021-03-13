@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // Import required components
 import {
   SafeAreaView,
@@ -7,27 +7,22 @@ import {
   View,
   TouchableOpacity,
   Image,
-  Platform,
-  PermissionsAndroid,
 } from 'react-native';
-
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { updateProfileData } from '../redux/profile/reducer';
-// Import Image Picker
-// import ImagePicker from 'react-native-image-picker';
-import {
-  launchCamera,
-  launchImageLibrary
-} from 'react-native-image-picker';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { launchImageLibrary } from 'react-native-image-picker';
 import { useEffect } from 'react';
 
-const ImageScreen = (props) => {
+const ImageScreen = props => {
   const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
-    setImageUri(props.profileImageUri)
-  }, [props.profileImageUri])
+    setImageUri(props.profileImageUri);
+  }, [props.profileImageUri]);
 
   const pickImage = () => {
     const options = {
@@ -54,49 +49,44 @@ const ImageScreen = (props) => {
     // this.saveSettings();
   };
 
-  console.log('props.profileImageUri');
-  console.log(props.profileImageUri);
   return (
-    <View style={{justifyContent: 'center', alignItems: 'center'}}>
-
-    <View style={styles.screenTitleView}>
-                <Text style={styles.screenTitleText}>
-                    Upload a photo of yourself
-                </Text>
-            </View>
-            <TouchableOpacity onPress={pickImage} style={styles.inputContainer}>
-            {imageUri ? (
-                      <Image
-                          style={styles.profileImage}
-                          source={{uri: imageUri}}
-                      />
-                    ) : null}
-              </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}
-            onPress={() => {
-              console.log('updateProfileData ');
-              props.updateProfileData('profileImageUri', imageUri);
-              if(props.navigation.canGoBack()) {
-                props.navigation.pop();
-              }
-            }}
-            >
-              <Text style={[styles.buttonText]}>Update</Text>
-            </TouchableOpacity>
-            </View>
+    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.screenTitleView}>
+        <Text style={styles.screenTitleText}>Upload a photo of yourself</Text>
+      </View>
+      <TouchableOpacity onPress={pickImage} style={styles.inputContainer}>
+        {imageUri ? (
+          <Image style={styles.profileImage} source={{ uri: imageUri }} />
+        ) : (
+          <View style={styles.imagePickerContainer}>
+            <Icon name="user" size={100} style={{ color: '#fff' }} />
+          </View>
+        )}
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => {
+          props.updateProfileData('profileImageUri', imageUri);
+          if (props.navigation.canGoBack()) {
+            props.navigation.pop();
+          }
+        }}
+      >
+        <Text style={[styles.buttonText]}>Update</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
-
 
 export default compose(
   connect(
     state => ({
-      profileImageUri: state.profile.profileImageUri
+      profileImageUri: state.profile.profileImageUri,
     }),
     dispatch => ({
       updateProfileData: (...args) => dispatch(updateProfileData(...args)),
     }),
-  )
+  ),
 )(ImageScreen);
 
 const styles = StyleSheet.create({
@@ -135,10 +125,10 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     textAlign: 'center',
     textAlignVertical: 'center',
-    color: '#fff'
+    color: '#fff',
   },
   buttonContainer: {
-    backgroundColor: "#000",
+    backgroundColor: '#000',
     width: '80%',
     height: 60,
     alignItems: 'center',
@@ -147,31 +137,39 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 5, // iOS
     elevation: 3, // Android
-    shadowOffset: { width: 0, height: 0 }
+    shadowOffset: { width: 0, height: 0 },
   },
   screenTitleView: {
     marginTop: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80%'
-},
-screenTitleText: {
-  fontFamily: 'Avenir-Book',
-  fontSize: 24,
-  fontWeight: '800',
-  color: '#000',
-},
-profileImage: {
-  width: 300,
-  height: 300,
-},
-inputContainer: {
-  marginTop: 20,
-  justifyContent: 'center',
-  alignItems: 'flex-start',
-  width: '80%',
-  flexDirection: 'row',
-  minHeight: 250,
-  marginBottom: 50,
-},
+    width: '80%',
+  },
+  screenTitleText: {
+    fontFamily: 'Avenir-Book',
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#000',
+  },
+  profileImage: {
+    width: 300,
+    height: 300,
+  },
+  inputContainer: {
+    marginTop: 20,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    width: '80%',
+    flexDirection: 'row',
+    minHeight: 250,
+    marginBottom: 50,
+    // backgroundColor: 'red'
+  },
+  imagePickerContainer: {
+    width: 300,
+    height: 300,
+    backgroundColor: '#006aff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
