@@ -10,8 +10,11 @@ git clone https://github.com/rutvijb10/profile-app
 # Navigate to clonned folder and Install dependencies
 cd profile-app && yarn install
 
-# Install Pods
-cd ios && pod install
+# Install Pods For iOS
+cd ios && pod install && cd ..
+
+# Gradle Clean for Android
+cd android && ./gradlew clean && cd ..
 ```
 
 #### 2. Start the Node Development Server
