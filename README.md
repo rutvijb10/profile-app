@@ -1,4 +1,4 @@
-# Profile Builder 🚀
+# Profile Builder
 ## Getting Started
 
 #### 1. Clone and Install
