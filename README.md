@@ -14,9 +14,16 @@ cd profile-app && yarn install
 cd ios && pod install
 ```
 
-#### 2. Open RNS in your iOS simulator
+#### 2. Start the Node Development Server
 
-Run this command to start the development server and to start the app on iOS simulator:
+Run this command to start the development server :
+```
+yarn start
+```
+
+#### 3. Open Profile Builder App in your iOS simulator
+
+After the development server has opened, run this command to start the app on iOS simulator:
 ```
 yarn run:ios
 ```
