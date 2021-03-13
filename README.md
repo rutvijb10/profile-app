@@ -18,7 +18,10 @@ cd android && ./gradlew clean && cd ..
 ```
 
 #### 2. Fix Images for IOS >= 14
+
+```
 cd scripts && sh fix-image.sh && cd ..
+```
 #### 3. Start the Node Development Server
 
 Run this command to start the development server :
