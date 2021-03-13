@@ -17,14 +17,16 @@ cd ios && pod install && cd ..
 cd android && ./gradlew clean && cd ..
 ```
 
-#### 2. Start the Node Development Server
+#### 2. Fix Images for IOS >= 14
+cd scripts && sh fix-image.sh && cd ..
+#### 3. Start the Node Development Server
 
 Run this command to start the development server :
 ```
 yarn start
 ```
 
-#### 3. Open Profile Builder App in your iOS simulator
+#### 4. Open Profile Builder App in your iOS simulator
 
 After the development server has opened, run this command to start the app on iOS simulator:
 ```
