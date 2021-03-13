@@ -2,7 +2,7 @@
 ## Getting Started
 
 #### 1. Clone and Install
-
+Make sure that node and yarn are installed:
 ```bash
 # Clone the repo
 git clone https://github.com/rutvijb10/profile-app
