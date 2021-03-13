@@ -36,7 +36,7 @@ After the development server has opened, run this command to start the app on iO
 yarn run:ios
 ```
 
-Or, if you prefer Android:
+Or, to run it on Android:
 ```
 yarn run:android
 ```
